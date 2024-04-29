@@ -1,0 +1,14 @@
+venv
+.env
+__pycache__
+
+
+# images/*.{png,jpg,jpeg,gif,bmp,tiff} # not working
+images/*.jpg
+images/*.png
+images/*.jpeg
+images/*.gif
+images/*.webp
+
+# From playground
+test.md
