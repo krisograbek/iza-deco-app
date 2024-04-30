@@ -33,5 +33,5 @@ def image_model(inputs: dict) -> dict:
 def get_image_information(image_file, prompt: str) -> dict:
     vision_chain = load_image_chain | image_model | parser
     vision_response = vision_chain.invoke({"image_file": image_file, "prompt": prompt})
-    print(f"Vision response: {vision_response}")
+    # print(f"Vision response: {vision_response}")
     return vision_response
