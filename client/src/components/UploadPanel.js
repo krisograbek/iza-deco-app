@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { generateIdeas } from '../services/api';
+import Loader from './Spinner';
 
 const Panel = styled.div`
   display: flex;
@@ -44,6 +45,7 @@ const Button = styled.button`
 
 const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInput }) => {
   const [dragging, setDragging] = useState(false);
+  const [isGeneratingIdeas, setIsGeneratingIdeas] = useState(false);
   const fileInputRef = useRef(null);
 
   const handleFileInputClick = () => {
@@ -84,6 +86,7 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInpu
   };
 
   const handleGenerateClick = async () => {
+    setIsGeneratingIdeas(true);
     const formData = new FormData();
     formData.append('image', image);
     formData.append('text', textInput);
@@ -91,6 +94,7 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInpu
     const response = await generateIdeas(formData);
     console.log(response)
     onIdeasGenerated(response.data);
+    setIsGeneratingIdeas(false);
   };
 
   return (
@@ -118,6 +122,12 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInpu
       <Button onClick={handleGenerateClick} disabled={!image}>
         Generate Ideas
       </Button>
+      {isGeneratingIdeas && (
+        <>
+          <p>Generating ideas</p>
+          <Loader />
+        </>
+      )}
     </Panel>
   );
 };

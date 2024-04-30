@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { generateImage } from '../services/api';
+import Loader from './Spinner';
 
 const Panel = styled.div`
   display: flex;
@@ -89,9 +90,21 @@ const ImageContainer = styled.div`
   margin-top: 20px;
 `;
 
+const StyledImage = styled.img`
+  max-width: 100%; // Control the size of the images (could be in pixels or percentages)
+  width: auto; // This will maintain the aspect ratio of the images
+  height: auto; // This will maintain the aspect ratio of the images
+  max-height: 300px; // Optional: limit the height of images if they are too tall
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+`;
+
+
 const IdeasPanel = ({ ideas, design, person, textInput }) => {
   const [selectedIdeas, setSelectedIdeas] = useState([]);
   const [images, setImages] = useState([]);
+  const [isGeneratingImages, setIsGeneratingImages] = useState(false);
 
   const handleCheckboxChange = (idea) => {
     setSelectedIdeas(prev => {
@@ -107,6 +120,7 @@ const IdeasPanel = ({ ideas, design, person, textInput }) => {
 
   const handleGenerateClick = async () => {
     // Filter the ideas array for only the selected items.
+    setIsGeneratingImages(true);
     const selectedIdeasDetails = ideas.filter(idea =>
       selectedIdeas.includes(`${idea.art_type}: ${idea.description.substring(0, 100)}`));
 
@@ -131,6 +145,7 @@ const IdeasPanel = ({ ideas, design, person, textInput }) => {
         // Optionally handle the error, e.g., by displaying an error message.
       }
     }
+    setIsGeneratingImages(false);
   };
 
   return (
@@ -157,8 +172,19 @@ const IdeasPanel = ({ ideas, design, person, textInput }) => {
       <Button onClick={handleGenerateClick} disabled={selectedIdeas.length === 0}>
         Generate Images
       </Button>
+      {isGeneratingImages && (
+        <>
+          <p>Generating images</p>
+          <Loader />
+        </>
+      )}
       <ImageContainer>
-        {/* Image display logic here */}
+        {images.map((image, index) => (
+          <StyledImage
+            src={image.url}
+            alt={`Trouble opening ${image.url}`}
+          />
+        ))}
       </ImageContainer>
     </Panel>
   );

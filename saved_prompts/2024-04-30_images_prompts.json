@@ -6,5 +6,45 @@
     {
         "revised_prompt": "Create an image of a serene, urban environment during dawn or dusk. The street is lined with elegant, minimalist buildings and it's completely deserted, devoid of any human presence or vehicles. The soft, muted light that infuses the scene creates a contemplative atmosphere. The artwork should be rendered with a monochromatic color scheme for simplicity, thus allowing for deeper focus on the architectural elegance of the city in peaceful solitude.",
         "image_url": "/images/20240430080031_tmoments.png"
+    },
+    {
+        "revised_prompt": "Create a minimalist contemporary art poster that emphasizes a sleek and simple aesthetic. It should encompass a black and white line drawing of a city skyline, highlighting the intricate details of buildings and streets. The contrast of light and shadow should be used to bring depth to the scene, contributing to a serene and contemplative atmosphere. The absence of color should add to the monochromatic aesthetic, promoting an air of understated elegance and minimalistic beauty. Ideal for a space that welcomes quiet moments of reflection and solitude, this artwork will be the perfect addition to any wall space seeking a moment of calm.",
+        "image_url": "/images/20240430101118_solitude.png"
+    },
+    {
+        "revised_prompt": "Create an abstract geometric print with bold, distinct lines and shapes in black and white, adhering to a modern, sophisticated aesthetic. The design should be minimalistic, reflecting a taste for simplicity and functionality. The geometric patterns should add an element of visual interest without being overwhelming. This print should enhance a room with a modern, monochromatic aesthetic, creating a serene and stylish atmosphere.",
+        "image_url": "/images/20240430101429_toenjoy.png"
+    },
+    {
+        "revised_prompt": "Create an architectural line drawing poster that features intricate details of renowned architectural elements, capturing the beauty and precision of design. This piece should demonstrate a minimalist style, appealing to those who appreciate modern and functional aesthetics. Utilize a monochromatic color scheme to instil a sense of simplicity and sophistication in the artwork, allowing it to seamlessly blend in any given space. This illustration should embody a love for organization and structure, providing a calming and reflective centerpiece.",
+        "image_url": "/images/20240430101446_eirwalls.png"
+    },
+    {
+        "revised_prompt": "Create a black and white photography-inspired image featuring a tranquil natural landscape. The scene should emphasize simplicity and elegance, with high-contrast elements adding depth and drama. The minimalist composition and monochrome color setting is key, reflecting a contemplative and classic taste. This image is intended for someone who enjoys moments of solitude and reflection, symbolizing calm and appreciation for the simple beauty of the world.",
+        "image_url": "/images/20240430105950_theworld.png"
+    },
+    {
+        "revised_prompt": "Create a simple black and white line drawing depicting an elegant city skyline. The cityscape should be designed in a minimalist manner, focusing on the basic geometric shapes that make up the urban landscape. The use of clean, straight lines instead of detailed textures should contribute to the overall minimalist aesthetic. The juxtaposition of dark (black) with light (white) will create a stark contrast that symbolizes the constant bustling activity of the city. This artwork aims to resonate with those who appreciate the quiet beauty of urban architecture, offering a moment of solitary contemplation amidst the chaos of city life.",
+        "image_url": "/images/20240430110009_solitude.png"
+    },
+    {
+        "revised_prompt": "Generate an abstract painting that boasts a serene and minimalist composition. The chosen color palette should consist of varying shades of grey and white, with details brought to life through textured brushstrokes, establishing a sense of depth and movement that is captivating yet not overpowering. The resultant aesthetic will be modern, sophisticated, and intentional, appealing to lovers of simplicity and tranquility. This piece of art will be the perfect addition to an orderly, clutter-free room, reflecting the personality and taste of individuals who enjoy spending time in such a space.",
+        "image_url": "/images/20240430110446_hatspace.png"
+    },
+    {
+        "revised_prompt": "Generate an image of a geometric print showcasing a minimalist design. The artwork should contain clean lines and sharp angles to produce a sense of order and tranquility. Utilize a black and white color scheme to evoke a level of sophistication and elegance, complimenting a modern aesthetic. Ensure that the shapes and patterns are thoughtfully and intentionally placed, representing a preference for quality and simplicity. This art piece will serve as a perfect addition to a room featuring modern design, creating a serene atmosphere.",
+        "image_url": "/images/20240430110503_toenjoy.png"
+    },
+    {
+        "revised_prompt": "Generate an image of a poster featuring a geometric pattern that showcases minimalist beauty. The pattern comprises clean lines in a simple color palette of black and white, connoting modern sophistication. The conscious design of this print emanates tranquility and serenity, creating a harmonious atmosphere that adds to the aesthetic appeal of the room. This is an ideal piece for an individual with an appreciation for minimalism and thoughtful design, contributing to the overall peacefulness and organization of the space.",
+        "image_url": "/images/20240430124125_thespace.png"
+    },
+    {
+        "revised_prompt": "Compose a Zen-inspired ink wash painting that resonates tranquility and serenity. The monochromatic color scheme should deeply reflect a sense of calmness. Illustrate a modest but captivating urban scene with refined lines and subtle textures, an image of elegance that encourages introspective contemplation. Merge modern and minimalist aesthetics into the scene. Ideal for capturing the sense of solitude and admiration thereof in an urban ambience. The painting should provide a peaceful, meditation-friendly centerpiece that coaxes observers to stop and find comfort in its raw simplicity and beauty.",
+        "image_url": "/images/20240430124339_ndbeauty.png"
+    },
+    {
+        "revised_prompt": "Generate a monochrome botanical illustration featured on a poster. The artwork should be filled with stunning intricate details and delicate lines, and rendered in a grayscale color palette to imbue a sense of tranquility and sophistication. The botanical elements must be created gracefully to showcase the beauty of nature in a simple and elegant manner. The poster should be appreciated for its minimalist and modern taste, and is suitable for an individual who enjoys solitude and quiet reflection. The overall atmosphere of the poster created should evoke a sense of serenity and fit perfectly in an urban setting.",
+        "image_url": "/images/20240430124501_tmosphere.png"
     }
 ]

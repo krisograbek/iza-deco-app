@@ -26,7 +26,13 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <UploadPanel onIdeasGenerated={handleIdeasGenerated} image={image} setImage={setImage} textInput={textInput} setTextInput={setTextInput} />
+        <UploadPanel
+          onIdeasGenerated={handleIdeasGenerated}
+          image={image}
+          setImage={setImage}
+          textInput={textInput}
+          setTextInput={setTextInput}
+        />
         <IdeasPanel
           ideas={artSuggestions}
           design={design}
