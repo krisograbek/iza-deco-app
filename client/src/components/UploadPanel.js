@@ -43,7 +43,7 @@ const Button = styled.button`
   }
 `;
 
-const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInput }) => {
+const UploadPanel = ({ onIdeasGenerated, image, setImage, additionalInfo, setAdditionalInfo, person, setPerson }) => {
   const [dragging, setDragging] = useState(false);
   const [isGeneratingIdeas, setIsGeneratingIdeas] = useState(false);
   const fileInputRef = useRef(null);
@@ -82,14 +82,18 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInpu
   };
 
   const handleTextChange = (event) => {
-    setTextInput(event.target.value);
+    setAdditionalInfo(event.target.value);
+  };
+
+  const handlePersonalityChange = (event) => {
+    setPerson(prevPerson => ({ ...prevPerson, personality: event.target.value }));
   };
 
   const handleGenerateClick = async () => {
     setIsGeneratingIdeas(true);
     const formData = new FormData();
     formData.append('image', image);
-    formData.append('text', textInput);
+    formData.append('text', additionalInfo);
 
     const response = await generateIdeas(formData);
     console.log(response)
@@ -118,7 +122,8 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, textInput, setTextInpu
         ref={fileInputRef}
         style={{ display: 'none' }}
       />
-      <Input type="text" value={textInput} onChange={handleTextChange} placeholder="Enter text here" />
+      <Input type="text" value={additionalInfo} onChange={handleTextChange} placeholder="Enter additional info" />
+      <Input type="text" value={person["personality"]} onChange={handlePersonalityChange} placeholder="personality" />
       <Button onClick={handleGenerateClick} disabled={!image}>
         Generate Ideas
       </Button>

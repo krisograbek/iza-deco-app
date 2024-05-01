@@ -8,11 +8,11 @@ import IdeasPanel from './components/IdeasPanel';
 
 const App = () => {
   const [image, setImage] = useState(null);
-  const [textInput, setTextInput] = useState('');
+  const [additionalInfo, setAdditionalInfo] = useState('');
 
   // Info from /generateIdeas
   const [design, setDesign] = useState('');
-  const [person, setPerson] = useState({});
+  const [person, setPerson] = useState({ personality: "", taste: "" });
   const [artSuggestions, setArtSuggestions] = useState([]);
 
   const handleIdeasGenerated = (data) => {
@@ -30,14 +30,16 @@ const App = () => {
           onIdeasGenerated={handleIdeasGenerated}
           image={image}
           setImage={setImage}
-          textInput={textInput}
-          setTextInput={setTextInput}
+          additionalInfo={additionalInfo}
+          setAdditionalInfo={setAdditionalInfo}
+          person={person}
+          setPerson={setPerson}
         />
         <IdeasPanel
           ideas={artSuggestions}
           design={design}
           person={person}
-          textInput={textInput}
+          additionalInfo={additionalInfo}
         />
 
       </div>
