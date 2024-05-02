@@ -4,6 +4,7 @@ import { theme } from './styles/theme';
 import { GlobalStyle } from './styles/GlobalStyle';
 import UploadPanel from './components/UploadPanel';
 import IdeasPanel from './components/IdeasPanel';
+import Container from './components/AppContainer';
 
 
 const App = () => {
@@ -25,7 +26,8 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Container>
+
         <UploadPanel
           onIdeasGenerated={handleIdeasGenerated}
           image={image}
@@ -41,8 +43,8 @@ const App = () => {
           person={person}
           additionalInfo={additionalInfo}
         />
+      </Container>
 
-      </div>
     </ThemeProvider>
   );
 };

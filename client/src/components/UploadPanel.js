@@ -5,12 +5,9 @@ import Loader from './Spinner';
 import InputContainer from './InputContainer';
 import Input from './Input';
 import InputArea from './InputArea';
+import Button from './Button';
+import Panel from './Panel';
 
-const Panel = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
 
 const FileInputContainer = styled.div`
   border: 2px dashed ${props => props.theme.colors.secondary};
@@ -27,19 +24,6 @@ const ImagePreview = styled.img`
   width: auto;
   height: auto;
   margin-bottom: 10px;
-`;
-
-const Button = styled.button`
-  padding: 10px 20px;
-  color: white;
-  background-color: ${props => props.theme.colors.primary};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:disabled {
-    background-color: ${props => props.theme.colors.secondary};
-  }
 `;
 
 const UploadPanel = ({ onIdeasGenerated, image, setImage, additionalInfo, setAdditionalInfo, person, setPerson }) => {

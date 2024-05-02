@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { generateImage } from '../services/api';
 import Loader from './Spinner';
+import Button from './Button';
+import ImageContainer from './ImageContainer';
+import StyledImage from './StyledImage';
+import Panel from './Panel';
 
-const Panel = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-`;
 
 const CheckboxContainer = styled.div`
   display: flex;
@@ -44,60 +43,6 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   cursor: pointer;
   height: 0;
   width: 0;
-`;
-
-// Now you can get rid of CustomCheckbox since we're changing the label's background directly
-
-
-const CustomCheckbox = styled.span`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 2px solid ${props => props.theme.colors.dark};
-
-  &:after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-  }
-`;
-
-const Button = styled.button`
-  padding: 10px 20px;
-  color: white;
-  background-color: ${props => props.theme.colors.primary};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:disabled {
-    background-color: ${props => props.theme.colors.secondary};
-  }
-`;
-
-const ImageContainer = styled.div`
-  margin-top: 20px;
-`;
-
-const StyledImage = styled.img`
-  max-width: 100%; // Control the size of the images (could be in pixels or percentages)
-  width: auto; // This will maintain the aspect ratio of the images
-  height: auto; // This will maintain the aspect ratio of the images
-  max-height: 300px; // Optional: limit the height of images if they are too tall
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
 `;
 
 
