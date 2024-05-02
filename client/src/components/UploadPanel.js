@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { generateIdeas } from '../services/api';
 import Loader from './Spinner';
+import InputContainer from './InputContainer';
+import Input from './Input';
+import InputArea from './InputArea';
 
 const Panel = styled.div`
   display: flex;
@@ -23,10 +26,6 @@ const ImagePreview = styled.img`
   max-height: 500px;
   width: auto;
   height: auto;
-  margin-bottom: 10px;
-`;
-
-const Input = styled.input`
   margin-bottom: 10px;
 `;
 
@@ -81,14 +80,6 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, additionalInfo, setAdd
     }
   };
 
-  const handleTextChange = (event) => {
-    setAdditionalInfo(event.target.value);
-  };
-
-  const handlePersonalityChange = (event) => {
-    setPerson(prevPerson => ({ ...prevPerson, personality: event.target.value }));
-  };
-
   const handleGenerateClick = async () => {
     setIsGeneratingIdeas(true);
     const formData = new FormData();
@@ -122,14 +113,17 @@ const UploadPanel = ({ onIdeasGenerated, image, setImage, additionalInfo, setAdd
         ref={fileInputRef}
         style={{ display: 'none' }}
       />
-      <Input type="text" value={additionalInfo} onChange={handleTextChange} placeholder="Enter additional info" />
-      <Input type="text" value={person["personality"]} onChange={handlePersonalityChange} placeholder="personality" />
+      <InputContainer>
+        <Input value={additionalInfo} onChange={setAdditionalInfo} placeholder="Enter additional info" />
+        <Input value={person.taste} onChange={(value) => setPerson(prev => ({ ...prev, taste: value }))} placeholder="Taste" />
+        <InputArea value={person.personality} onChange={(value) => setPerson(prev => ({ ...prev, personality: value }))} placeholder="Personality" />
+      </InputContainer>
       <Button onClick={handleGenerateClick} disabled={!image}>
         Generate Ideas
       </Button>
       {isGeneratingIdeas && (
         <>
-          <p>Generating ideas</p>
+          <p>Generating ideas...</p>
           <Loader />
         </>
       )}
